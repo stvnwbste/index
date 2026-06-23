@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Information System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f6f5;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:320px;
+    background:white;
+    border-right:1px solid #e5e5e5;
+}
+
+.logo{
+    background:#5d927f;
+    color:white;
+    padding:25px;
+}
+
+.logo h2{
+    font-size:30px;
+}
+
+.logo p{
+    opacity:.8;
+}
+
+.member-list{
+    padding:20px;
+}
+
+.member{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:12px;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.3s;
+    margin-bottom:10px;
+}
+
+.member:hover{
+    background:#eef7f3;
+}
+
+.member img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.member-name{
+    font-size:18px;
+}
+
+/* CONTENT */
+
+.content{
+    flex:1;
+    padding:30px;
+}
+
+.profile-card{
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.profile-top{
+    display:flex;
+    gap:40px;
+    align-items:center;
+}
+
+.profile-photo{
+    width:280px;
+    height:280px;
+    border-radius:25px;
+    object-fit:cover;
+}
+
+.profile-info h1{
+    font-size:55px;
+    color:#1d2533;
+}
+
+.profile-info p{
+    margin-top:10px;
+    color:#666;
+    font-size:18px;
+}
+
+/* INFO CARDS */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:40px;
+}
+
+.card{
+    padding:25px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.address{
+    background:#edf7f1;
+}
+
+.contact{
+    background:#edf3fb;
+}
+
+.facebook{
+    background:#f3eefc;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* DETAILS */
+
+.details{
+    margin-top:30px;
+    background:#fafafa;
+    padding:25px;
+    border-radius:20px;
+    min-height:150px;
+    font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>🏡 Manuel Family</h2>
+        <p>Stay Connected</p>
+    </div>
+
+    <div class="member-list">
+
+        <div class="member"
+        onclick="showMember(
+        'Mae Anne M. Lingat',
+        'mae.jpeg',
+        '564 Purok 2, Rizal ST. San Vicente Sto. Tomas Pamp.',
+        'N/A',
+        'https://www.facebook.com/mhaeanne.lingat')">
+
+            <img src="mae.jpeg">
+
+            <div class="member-name">Mae Anne M. Lingat</div>
+
+        </div>
+
+        <div class="member"
+        onclick="showMember(
+        'Nora Gabagat',
+        'nora.jpeg',
+        'N/A',
+        'N/A',
+        'https://www.facebook.com/nora.gabagat.5')">
+
+            <img src="nora.jpeg">
+
+            <div class="member-name">Nora Gabagat</div>
+
+        </div>
+
+       <div class="member"
+       onclick="showMember(
+       'Teodorico Manuel',
+       'boboy.jpeg',
+       'N/A',
+       'N/A',
+       'https://www.facebook.com/teodoricoboboy.manuel')">
+       
+            <img src="boboy.jpeg">
+
+            <div class="member-name">Teodorico Manuel</div>
+ 
+                   
+        </div>
+
+        <div class="member"
+        onclick="showMember(
+        'Richelle Manuel', 
+        'richelle.jpeg',
+        'N/A',
+        'N/A',
+        'https://www.facebook.com/richelle.anne.2')">
+
+            <img src="richelle.jpeg">
+
+            <div class="member-name">Richelle Manuel</div>
+
+
+        </div>
+          
+        <div class="member"
+        onclick="showMember(
+        'Kyle Gio Manuel', 
+        'gio.jpeg',
+        'N/A',
+        'N/A',
+        'https://www.facebook.com/09652337855toxic.14')">
+
+            <img src="gio.jpeg">
+
+            <div class="member-name">Kyle Gio Manuel</div>
+       
+        </div>
+
+        <div class="member"
+        onclick="showMember(
+        'Steven Edward Lingat', 
+        'steven.jpeg',
+        'N/A',
+        'N/A',
+        'https://www.facebook.com/stevenedward.lingat')">
+
+            <img src="steven.jpeg">
+
+            <div class="member-name">Steven Edward Lingat</div>
+       
+        </div>
+
+        <div class="member"
+        onclick="showMember(
+        'Lance Punzalan', 
+        'lance.jpeg',
+        'N/A',
+        'N/A',
+        'https://www.facebook.com/profile.php?id=61583343981711')">
+
+            <img src="lance.jpeg">
+
+            <div class="member-name">Lance Punzalan</div>
+       
+        </div>
+
+        <div class="member"
+        onclick="showMember(
+        'Jashmine Gabagat', 
+        'jashmine.jpeg',
+        'N/A',
+        'N/A',
+        'https://www.facebook.com/jash.blink.14')">
+
+            <img src="jashmine.jpeg">
+
+            <div class="member-name">Jashmine Gabagat</div>
+       
+        </div>
+
+        <div class="member"
+        onclick="showMember(
+        'Jensen Gabagat', 
+        'jensen.jpeg',
+        'N/A',
+        'N/A',
+        'https://www.facebook.com/jensengabagat')">
+
+            <img src="jensen.jpeg">
+
+            <div class="member-name">Jensen Gabagat</div>
+       
+        </div>
+
+        <div class="member"
+        onclick="showMember(
+        'Reeno Gabagat', 
+        'ren.jpeg',
+        'N/A',
+        'N/A',
+        'https://www.facebook.com/GBGTRNOMNL')">
+
+            <img src="ren.jpeg">
+
+            <div class="member-name">Reeno Gabagat</div>
+       
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="content">
+
+    <div class="profile-card">
+
+        <div class="profile-top">
+
+            <img
+            id="profileImage"
+            class="profile-photo"
+            src="manuel.jpeg">
+
+            <div class="profile-info">
+
+                <h1 id="profileName">
+                    Manuel Family
+                </h1>
+
+                <p>
+                    Official Family Information System
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="info-grid">
+
+            <div
+            class="card address"
+            onclick="showAddress()">
+
+                <h3>📍 Address</h3>
+                <p>View Address</p>
+
+            </div>
+
+            <div
+            class="card contact"
+            onclick="showContact()">
+
+                <h3>📞 Contact</h3>
+                <p>View Number</p>
+
+            </div>
+
+            <div
+            class="card facebook"
+            onclick="openFacebook()">
+
+                <h3>📘 Facebook</h3>
+                <p>Open Profile</p>
+
+            </div>
+
+        </div>
+
+        <div
+        id="details"
+        class="details">
+
+            Select a card above.
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+let currentMember={
+    address:"",
+    contact:"",
+    facebook:""
+};
+
+function showMember(
+name,
+photo,
+address,
+contact,
+facebook
+){
+
+    document.getElementById(
+    "profileName"
+    ).innerText=name;
+
+    document.getElementById(
+    "profileImage"
+    ).src=photo;
+
+    currentMember={
+        address,
+        contact,
+        facebook
+    };
+
+    document.getElementById(
+    "details"
+    ).innerHTML=
+    "Choose Address, Contact, or Facebook.";
+}
+
+function showAddress(){
+
+    document.getElementById(
+    "details"
+    ).innerHTML=
+    "<h2>📍 Address</h2><br>"+currentMember.address;
+
+}
+
+function showContact(){
+
+    document.getElementById(
+    "details"
+    ).innerHTML=
+    "<h2>📞 Contact Number</h2><br>"+currentMember.contact;
+
+}
+
+function openFacebook(){
+
+    window.open(
+    currentMember.facebook,
+    "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
